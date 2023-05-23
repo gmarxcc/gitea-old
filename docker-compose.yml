@@ -1,8 +1,8 @@
 version: '2'
 services:
-  web:
+  gitea-web:
     image: gitea/gitea:1.13.1
-    container_name: gitea
+    container_name: gitea-old
     volumes:
       - ./data:/data
     ports:
@@ -11,9 +11,11 @@ services:
     depends_on:
       - db
     restart: always
+
+      
   db:
     image: mariadb:10
-    container_name: gitea_db
+    container_name: gitea-old_db
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=Marx7476
